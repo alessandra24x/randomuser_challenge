@@ -5,6 +5,7 @@ import UserContext from '../context';
 
 export default function Home() {
     const { state } = useContext(UserContext);
+
     return (
         <div className="grid">
             {state.users.map(user => {
