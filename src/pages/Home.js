@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useCallback, useEffect } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import UserCard from '../components/UserCard';
 import { Link } from 'wouter';
 import UserContext from '../context';
@@ -6,18 +6,19 @@ import UserContext from '../context';
 export default function Home() {
     const { state, actions } = useContext(UserContext);
     const observer = useRef();
+    const { loadMore } = actions;
 
     useEffect(() => {
         const intersection = new IntersectionObserver(entries => {
             if (entries[0].isIntersecting) {
-                actions.loadMore();
+                loadMore();
             }
         }, {
             threshold: 1,
         }
         );
         intersection.observe(observer.current);
-    }, [actions.loadMore]);
+    }, [loadMore]);
 
     return (
         <div className="grid">
