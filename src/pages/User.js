@@ -12,9 +12,9 @@ export default function User() {
 
     return (
         <div className="card_content">
-            < img src={user.large} alt="{first} {last} info" />
+            < img src={user.large} alt="user face" />
             <h1>{user.first} {user.last}</h1>
-            <h3>{user.username}</h3>
+            <h4>{user.username}</h4>
             <small>{user.email}</small>
         </div>
     )

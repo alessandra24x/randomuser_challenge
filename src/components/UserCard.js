@@ -7,7 +7,7 @@ export default function UserCard({ onClick, thumbnail, title, first, last, city,
             className="link-button"
             onClick={onClick}>
             <div className="card">
-                < img src={thumbnail} alt="{first} {last} info" />
+                < img src={thumbnail} alt="user face" />
                 <h4>{title} {first} {last}</h4>
                 <small>{city}, {country}</small>
             </div>
